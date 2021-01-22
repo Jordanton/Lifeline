@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/mvc
+ 	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+ 	http://www.springframework.org/schema/context
+ 	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.itafin.lifeline" />
+
+	<mvc:annotation-driven />
+	
+	<mvc:interceptors>
+		<bean class="com.itafin.lifeline.utils.AppAuthorizationInterceptor" />
+	</mvc:interceptors>
+
+<!--  Lifeline Datasource and JdbcTemplate -->	
+	<bean id="datasource" class="org.springframework.jndi.JndiObjectFactoryBean" lazy-init="false">	
+		<property name="jndiName" value="java:/SCERS" />
+    </bean>
+    
+    <bean class="org.springframework.jdbc.core.JdbcTemplate" id="appDataSourceTemplate">
+		<property name="dataSource" ref="datasource"/>
+	</bean>	
+ 
+<!--  Option 2 Uncomment to Run on Apache Tomcat Server    -->            
+<!-- 	<bean id="datasource" -->
+<!-- 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> -->
+<!-- 		<property name="url" value="jdbc:oracle:thin:@oofdtaxp10:1521:LTXSYT16" /> -->
+<!-- 		<property name="username" value="latax" /> -->
+<!-- 		<property name="password" value="youEnter" /> -->
+<!-- 	</bean> -->
+</beans>

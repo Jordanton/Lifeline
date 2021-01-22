@@ -1,0 +1,134 @@
+#background-opacity {
+    background-color: #212121;
+    opacity: 0.55;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    height: 85px;
+    z-index: 2;
+}
+.logo-1 {
+	position: absolute;
+	top: 0px;
+    left: 0px;
+	margin-left: 15px;
+	height:176px;
+	z-index:10;
+}
+.banner-1 {
+	width:100%;
+	height:180px;
+}
+@media all and (max-width: 768px) {
+	.logo-1 {
+		height:85px;
+	}
+	.banner-1 {
+		opacity: 0;
+		height: 85px;
+	}
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*change breadcrumb background color*/
+.breadcrumb {
+     background-color: transparent;
+     border-radius: 0;
+     -moz-border-radius: 0;
+     -webkit-border-radius: 0;
+     -o-border-radius: 0;
+}
+
+.well.custom-well-small { width: 750px; margin: 0 auto; }
+
+.required::before {
+	content:"* ";
+	color:red;
+	font-weight: bold;
+}
+
+.user-info {
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  list-style: none;
+  right:0;
+  border-radius: 4px;
+  float: right;
+}
+
+    html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#page-container {
+   min-height:100vh;
+   position:relative;
+}
+#header {
+   padding:0px;
+}
+#content {
+   position: relative;
+   margin-top: 0px;
+   padding:0px;
+   padding-bottom:30px;
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:300px;   /* Height of the footer */
+}
+
+.nav-element {
+	position:absolute;
+	display:inline;
+   background-color: transparent;
+}
+.nav-container{
+	height:35px;
+	background-color: #ccc;
+}
+
+.info-message {
+	margin: 12px 0px;
+}
+
+.center {
+	text-align: center;
+}
+
+.collapse-toggle-txt {
+	font-weight: 400;
+	font-size: 1.25rem;
+	text-decoration: none;
+}
+
+.filled-out {
+	display: block;
+	font-style: italic;
+	font-weight: bold;
+	line-height: 1.6;
+	font-size: large;
+}
+
+legend {
+	background-color: #337ab7;
+	color:white!important;
+}
+
+.form-control::placeholder {
+	color: #660000;
+	opacity: 0.75;
+}
+
+.form-control:-ms-input-placeholder { /* IE 10-11 */
+	color: 	#660000;
+	opacity: 0.75;
+}
